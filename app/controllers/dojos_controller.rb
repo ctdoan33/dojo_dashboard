@@ -31,14 +31,14 @@ class DojosController < ApplicationController
 
   def show
     @dojo = Dojo.find(params[:id])
+    @students = Student.where(dojo: @dojo)
   end
 
   def destroy
-    @dojo = Dojo.find(params[:id])
-    @dojo.destroy
+    Dojo.find(params[:id]).destroy
     redirect_to "/dojos"
   end
-  
+
   private
     def dojo_params
       params.require(:dojo).permit(:branch, :street, :city, :state)

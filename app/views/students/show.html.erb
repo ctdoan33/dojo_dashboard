@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= @student.first_name %> <%= @student.last_name %></title>
+</head>
+<body>
+    <h1><%= @dojo.branch %>'s <%= @student.first_name %> <%= @student.last_name %></h1>
+    <p>Email: <%= @student.email %></p>
+    <h2>Cohort</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @cohorts.each do |cohort| %>
+            <tr>
+                <td><%= cohort.first_name %></td>
+                <td><%= cohort.last_name %></td>
+                <td><%= cohort.email %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <p>
+        <a href="/dojos">Home</a> | 
+        <a href="/dojos/<%= @dojo.id %>/students"><%= @dojo.branch %></a> | 
+        <a href="/dojos/<%= @dojo.id %>/students/<%= @student.id %>/edit">Edit</a>
+    </p>
+</body>
+</html>
