@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Dojo</title>
+</head>
+<body>
+    <h1>New Dojo</h1>
+    <% if @dojo %>
+    <% @dojo.errors.full_messages.each do |message| %>
+    <p><%= message %></p>
+    <% end %>
+    <% end %>
+    <form action="/dojos" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <label for="branch">Branch:</label>
+        <input type="text" name="dojo[branch]">
+        <label for="street">Street:</label>
+        <input type="text" name="dojo[street]">
+        <label for="city">City:</label>
+        <input type="text" name="dojo[city]">
+        <label for="state">State:</label>
+        <input type="text" name="dojo[state]">
+        <input type="submit" value="Create">
+    </form>
+    <p><a href="/dojos">Go Back</a></p>
+</body>
+</html>
