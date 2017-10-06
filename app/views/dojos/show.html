@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= @dojo.branch %> Dojo</title>
+</head>
+<body>
+    <h1><%= @dojo.branch %> Dojo</h1>
+    <p>Address: <%= @dojo.street %></p>
+    <p>City: <%= @dojo.city %> State: <%= @dojo.state %></p>
+    <p><a href="/dojos">Home</a> | <a href="/dojos/<%= @dojo.id %>/edit">Edit</a></p>
+</body>
+</html>
